@@ -19,16 +19,30 @@ public class LogicGateLevelManager : MonoBehaviour
 
     public void CheckIfPuzzleSolved()
     {
+        bool wrong = false;
         foreach (LogicPuzzleSocket levelSocket in levelSockets)
         {
+
             if (!levelSocket.IsCorrect())
             {
-                Debug.Log("Level Wrong"); 
-                return;
+                levelSocket.GetComponent<SpriteRenderer>().color = Color.red;
+                wrong = true;
             }
+            else
+                levelSocket.GetComponent<SpriteRenderer>().color = Color.green;
         }
-        Debug.Log("Level Right");
-        CompleteLevel();
+        
+        if(!wrong)
+        {
+            Debug.Log("Level Right");
+            CompleteLevel();
+        }
+        else
+        {
+            Debug.Log("Level Wrong");
+            return;
+        }
+
     }
 
     public void CompleteLevel()
