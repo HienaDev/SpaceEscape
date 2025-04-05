@@ -1,11 +1,16 @@
+using NUnit.Framework;
 using TMPro;
 using UnityEngine;
+using System.Collections.Generic;
+using System.Collections;
+using DG.Tweening;
 
 public class MissionManager : MonoBehaviour
 {
 
     [SerializeField] private int numberOfPlayers = 4;
     [SerializeField] private GameObject playerPrefab;
+    private List<GameObject> players = new List<GameObject>(); // List to store player instances
     [SerializeField] private float spacingBetweenPlayers = 3f;
     [SerializeField] private string[] names;
 
@@ -72,22 +77,62 @@ public class MissionManager : MonoBehaviour
     {
         // Calculate the total width occupied by all objects
         float totalWidth = (numberOfPlayers - 1) * spacingBetweenPlayers;
+        float verticalOffset = 2f;
+        float duration = 1f;
 
         int numberOfRepeats = 0;
 
         for (int i = 0; i < numberOfPlayers; i++)
-        {   
+        {
             // Compute position: Centered around (0,0) in world space
             float xPos = (i * spacingBetweenPlayers) - (totalWidth / 2f);
             Vector2 spawnPosition = new Vector2(xPos, transform.position.y);
+            Vector2 startPosition = spawnPosition + Vector2.up * verticalOffset;
 
-            // Instantiate the object
-            GameObject playerTemp = Instantiate(playerPrefab, spawnPosition, Quaternion.identity);
+            // Instantiate the object at the *above* position
+            GameObject playerTemp = Instantiate(playerPrefab, startPosition, Quaternion.identity);
 
-            if(i - (numberOfRepeats * names.Length) >= names.Length)
+            if (i - (numberOfRepeats * names.Length) >= names.Length)
                 numberOfRepeats++;
 
+            players.Add(playerTemp);
+
+            // Set player name
             playerTemp.GetComponentInChildren<TextMeshProUGUI>().text = names[i - (numberOfRepeats * names.Length)];
+
+            // Get components
+            SpriteRenderer spriteRendererCircle = playerTemp.GetComponent<SpriteRenderer>();
+            SpriteRenderer spriteRendererImage = playerTemp.GetComponentInChildren<SpriteRenderer>();
+            TextMeshProUGUI text = playerTemp.GetComponentInChildren<TextMeshProUGUI>();
+
+            // Set initial alpha to 0
+            if (spriteRendererCircle != null)
+            {
+                Color col = spriteRendererCircle.color;
+                col.a = 0f;
+                spriteRendererCircle.color = col;
+                spriteRendererCircle.DOFade(1f, duration);
+            }
+
+            // Set initial alpha to 0
+            if (spriteRendererImage != null)
+            {
+                Color col = spriteRendererImage.color;
+                col.a = 0f;
+                spriteRendererImage.color = col;
+                spriteRendererImage.DOFade(1f, duration);
+            }
+
+            if (text != null)
+            {
+                Color col = text.color;
+                col.a = 0f;
+                text.color = col;
+                text.DOFade(1f, duration);
+            }
+
+            // Move from above with whip-like motion
+            playerTemp.transform.DOMove(spawnPosition, duration).SetEase(Ease.OutElastic);
         }
     }
 }
