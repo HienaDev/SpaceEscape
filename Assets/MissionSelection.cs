@@ -13,6 +13,8 @@ public class MissionSelection : MonoBehaviour
     private Mission missionSO;
     public void SetMission(Mission mission) => missionSO = mission;
 
+    public Transform triangleParent;
+
     private EventHandler onMissionClicked;
 
     private delegate void OnMissionClicked(int num);
@@ -74,7 +76,11 @@ public class MissionSelection : MonoBehaviour
 
                         if(missionSO != null)
                             if (missionSO.missionPrefab != null)
+                            {  
                                 Instantiate(missionSO.missionPrefab);
+                                triangleParent.gameObject.SetActive(false);
+                            }
+                                
 
                         Debug.Log("Clicked");
                     }
