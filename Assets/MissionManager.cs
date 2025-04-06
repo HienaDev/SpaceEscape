@@ -230,16 +230,39 @@ public class MissionManager : MonoBehaviour
             TextMeshProUGUI text = person.nameOfPerson;
             TextMeshProUGUI title = person.nameOfTitle;  // Reference the title text
 
+            Material circleMaterial = null;
+            Material imageMaterial = null;
+
             if (circle != null)
             {
-                Material mat = new Material(circle.material);
-                circle.material = mat;
+                circleMaterial = new Material(circle.material);
+                circle.material = circleMaterial;
 
-                if (mat.HasProperty("_Distortion"))
-                    mat.SetFloat("_Distortion", 1f);
+                if (circleMaterial.HasProperty("_Distortion"))
+                    circleMaterial.SetFloat("_Distortion", 1f);
 
-                if (mat.HasProperty("_DistortionStrength"))
-                    DOTween.To(() => mat.GetFloat("_DistortionStrength"), x => mat.SetFloat("_DistortionStrength", x), 0.1f, fadeDuration);
+                if (circleMaterial.HasProperty("_DistortionStrength"))
+                    DOTween.To(() => circleMaterial.GetFloat("_DistortionStrength"), x => circleMaterial.SetFloat("_DistortionStrength", x), 0.1f, fadeDuration);
+
+                if (circleMaterial.HasProperty("_Pixelation"))
+                    circleMaterial.SetFloat("_Pixelation", 1f);
+
+                // Apply Pixelation for the circle sprite
+                if (circleMaterial.HasProperty("_PixelResolution"))
+                    DOTween.To(() => circleMaterial.GetFloat("_PixelResolution"), x => circleMaterial.SetFloat("_PixelResolution", x), 0f, fadeDuration);
+            }
+
+            if (image != null)
+            {
+                imageMaterial = new Material(image.material);
+                image.material = imageMaterial;
+
+                if (imageMaterial.HasProperty("_Pixelation"))
+                    imageMaterial.SetFloat("_Pixelation", 1f);
+
+                // Apply Pixelation for the image sprite
+                if (imageMaterial.HasProperty("_PixelResolution"))
+                    DOTween.To(() => imageMaterial.GetFloat("_PixelResolution"), x => imageMaterial.SetFloat("_PixelResolution", x), 0f, fadeDuration);
             }
 
             int fadeComponents = 0;

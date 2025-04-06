@@ -47,7 +47,7 @@ Material:
     - _Outline: 0
     - _OutlineSize: 0.03
     - _OutlineThickness: 0.05
-    - _PixelResolution: 10
+    - _PixelResolution: 150
     - _Pixelation: 0
     - _Use8Directions: 1
     m_Colors:
