@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.44, y: 2, z: 1}
+  m_LocalScale: {x: 2.88, y: 4, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -151,6 +151,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f92eb48f60dc3824f918f51b86b75c57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveDistance: 0.1
+  moveDistance: 0.3
   moveDuration: 0.1
   easingType: 4
+  triangleParent: {fileID: 0}
+  missionLocked: 0
+  missionSelectionThatIsUnlockedOnComplete: {fileID: 0}

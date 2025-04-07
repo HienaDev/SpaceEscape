@@ -1,9 +1,10 @@
 using UnityEngine;
 
-public class LogicGateLevelManager : MonoBehaviour
+public class LogicGateLevelManager : MonoBehaviour , IPuzzle
 {
 
     [SerializeField] private LogicPuzzleSocket[] levelSockets;
+    public MissionSelection missionSelection;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -47,6 +48,16 @@ public class LogicGateLevelManager : MonoBehaviour
 
     public void CompleteLevel()
     {
+        CompletePuzzle();
+    }
 
+    public void StartPuzzle(MissionSelection m)
+    {
+        missionSelection = m;
+    }
+
+    public void CompletePuzzle()
+    {
+        missionSelection.CompleteMission();
     }
 }

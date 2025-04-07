@@ -1,6 +1,10 @@
 using DG.Tweening;
 using System;
+using System.Collections;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
 
 
 public class MissionSelection : MonoBehaviour
@@ -21,10 +25,23 @@ public class MissionSelection : MonoBehaviour
 
     private bool isUp = false;
 
+    public bool missionLocked;
+    public bool missionComplete;
+    public MissionSelection missionSelectionThatIsUnlockedOnComplete;
+
+    public MissionManager missionManager;
+
+    private GameObject gamePrefab;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        startPosition = transform.position;
+
+    }
+
+    public void InitializeStartPosition(Vector3 startPosition)
+    {
+        this.startPosition = startPosition;
     }
 
     // Update is called once per frame
@@ -74,21 +91,91 @@ public class MissionSelection : MonoBehaviour
                     {
                         GoDown();
 
-                        if(missionSO != null)
-                            if (missionSO.missionPrefab != null)
-                            {  
-                                Instantiate(missionSO.missionPrefab);
-                                triangleParent.gameObject.SetActive(false);
-                            }
+                        //if(missionSO != null)
+                        //    if (missionSO.missionPrefab != null)
+                        //    {  
+                        //        Instantiate(missionSO.missionPrefab);
+                        //        triangleParent.gameObject.SetActive(false);
+                        //    }
                                 
-
-                        Debug.Log("Clicked");
+                        if(missionLocked)
+                        {
+                            if(!missionComplete)
+                                missionManager.ShowLockedMissionUI();
+                            else
+                                Debug.Log("Mission Complete");  
+                        }
+                        else if (!missionLocked)
+                        {
+                            if (missionSO != null)
+                                missionManager.ShowUnlockedMissionUI(missionSO.missionTitle, missionSO.missionDescription, SelectMission);
+                            else
+                                missionManager.ShowUnlockedMissionUI("Test title", "Test Description Test Description Test Description Test Description Test Description ", SelectMission);
+                        }
+                            Debug.Log("Clicked");
                     }
 
                     break;
             }
         }
 
+    }
+
+    void SelectMission()
+    {
+        if(missionSO != null)
+            if (missionSO.missionPrefab != null)
+            {  
+                GameObject missionClone = Instantiate(missionSO.missionPrefab);
+                gamePrefab = missionClone;
+                Popup(gamePrefab);
+                missionClone.GetComponent<IPuzzle>().StartPuzzle(this); 
+                missionManager.CloseAllUIs();
+                triangleParent.gameObject.SetActive(false);
+            }
+        Debug.Log("Mission Select");
+    }
+
+    public void CompleteMission()
+    {
+        missionLocked = true;
+        missionComplete = true;
+        Popdown(gamePrefab, onCompleteCallback: DeactivatePrefab);
+        
+        
+    }
+
+    private void DeactivatePrefab()
+    {
+        gamePrefab.SetActive(false);
+        triangleParent.gameObject.SetActive(true);
+        missionSelectionThatIsUnlockedOnComplete.missionLocked = false;
+        missionSelectionThatIsUnlockedOnComplete.GetComponent<SpriteRenderer>().color = Color.white;
+        missionManager.ToggleSelectMissionUI(true);
+    }
+
+    // Method to trigger the popup effect (scaling up)
+    public void Popup(GameObject target, float duration = 0.4f, float targetScale = 1f, UnityAction onCompleteCallback = null)
+    {
+        // Start with a smaller scale and animate to the target scale
+        target.transform.localScale = Vector3.zero;
+        target.SetActive(true);  // Ensure the object is active before starting the animation
+        target.transform.DOScale(targetScale, duration)
+            .SetEase(Ease.OutBack)
+            .OnComplete(() => onCompleteCallback?.Invoke());
+    }
+
+    // Method to trigger the popdown effect (scaling down)
+    public void Popdown(GameObject target, float duration = 0.4f, float targetScale = 0f, UnityAction onCompleteCallback = null)
+    {
+        // Animate to a smaller scale
+        target.transform.DOScale(targetScale, duration)
+            .SetEase(Ease.InBack)
+            .OnComplete(() =>
+            {
+                target.SetActive(false);  // Disable object after animation
+                onCompleteCallback?.Invoke();  // Call the method after the animation is complete
+            });
     }
 
     void GoUp()

@@ -4,4 +4,6 @@ using UnityEngine;
 public class Mission : ScriptableObject
 {
     public GameObject missionPrefab;
+    public string missionTitle = "Test Title";
+    public string missionDescription = "Test Description";
 }

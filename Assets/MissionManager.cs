@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using UnityEngine.UI;
 using DG.Tweening;
 
 public class MissionManager : MonoBehaviour
@@ -16,20 +17,174 @@ public class MissionManager : MonoBehaviour
     public GameObject trianglePrefab;
     public int triangleCount = 8;
 
+    [SerializeField] private Transform centerOfTriangles;
+
     [SerializeField] private Mission[] missions;
 
     [SerializeField] private Transform trianglesParent;
+
+    [SerializeField] private float radiusAdjustmentFactor = 0.8f;
+
+    private List<MissionSelection> triangleMissions = new List<MissionSelection>();
+
+
+    [Header("Mission Selection")]
+    [SerializeField] private GameObject selectAMissionUI;
+    [Header("Mission unlocked")]
+    [SerializeField] private GameObject missionUnlockedUI;
+    [SerializeField] private TextMeshProUGUI missionTitle;
+    [SerializeField] private TextMeshProUGUI missionDescription;
+    [SerializeField] private Button buttonToStartMission;
+    [Header("Mission locked")]
+    [SerializeField] private GameObject missionLockedUI;
+
+    //[SerializeField] private game
+    private GameObject currentOpenUI = null;
 
     void Start()
     {
         InstanciatePlayers();
     }
 
-    void Update()
+    public void ToggleSelectMissionUI(bool show)
     {
+        if (show)
+        {
+            CloseCurrentUI(() =>
+            {
+                selectAMissionUI.SetActive(true);
+                AnimateUIIn(selectAMissionUI);
+                currentOpenUI = selectAMissionUI;
+            });
+        }
+        else if (selectAMissionUI.activeSelf)
+        {
+            AnimateUIOut(selectAMissionUI, () =>
+            {
+                selectAMissionUI.SetActive(false);
+                if (currentOpenUI == selectAMissionUI)
+                    currentOpenUI = null;
+            });
+        }
     }
 
-    void SpawnTriangles()
+    public void ShowUnlockedMissionUI(string title, string description, UnityEngine.Events.UnityAction startCallback)
+    {
+        CloseCurrentUI(() =>
+        {
+            missionUnlockedUI.SetActive(true);
+
+            missionTitle.text = title;
+            missionDescription.text = description;
+
+            buttonToStartMission.onClick.RemoveAllListeners();
+            buttonToStartMission.onClick.AddListener(startCallback);
+
+            AnimateUIIn(missionUnlockedUI);
+            currentOpenUI = missionUnlockedUI;
+        });
+    }
+
+    public void ShowLockedMissionUI()
+    {
+        CloseCurrentUI(() =>
+        {
+            missionLockedUI.SetActive(true);
+            AnimateUIIn(missionLockedUI);
+            currentOpenUI = missionLockedUI;
+        });
+    }
+
+    private void CloseCurrentUI(System.Action onComplete)
+    {
+        if (currentOpenUI != null && currentOpenUI.activeSelf)
+        {
+            AnimateUIOut(currentOpenUI, () =>
+            {
+                currentOpenUI.SetActive(false);
+                currentOpenUI = null;
+                onComplete?.Invoke();
+            });
+        }
+        else
+        {
+            onComplete?.Invoke();
+        }
+    }
+
+    public void CloseAllUIs(System.Action onComplete = null)
+    {
+        // If one is open, close it and then call onComplete
+        if (currentOpenUI != null && currentOpenUI.activeSelf)
+        {
+            AnimateUIOut(currentOpenUI, () =>
+            {
+                currentOpenUI.SetActive(false);
+                currentOpenUI = null;
+                onComplete?.Invoke();
+            });
+        }
+        else
+        {
+            // Nothing open, just invoke the callback
+            onComplete?.Invoke();
+        }
+    }
+
+
+    private Dictionary<GameObject, Vector2> originalPositions = new Dictionary<GameObject, Vector2>();
+
+    private void AnimateUIIn(GameObject ui)
+    {
+        CanvasGroup group = GetOrAddCanvasGroup(ui);
+        RectTransform rect = ui.GetComponent<RectTransform>();
+
+        if (!originalPositions.ContainsKey(ui))
+            originalPositions[ui] = rect.anchoredPosition; // Cache original anchored position
+
+        Vector2 originalPos = originalPositions[ui];
+
+        group.alpha = 0;
+        rect.localScale = Vector3.one * 0.8f;
+        rect.anchoredPosition = originalPos + Vector2.down * 100f;
+
+        DOTween.Kill(ui);
+
+        DOTween.Sequence()
+            .Append(rect.DOAnchorPos(originalPos, 0.4f).SetEase(Ease.OutExpo))
+            .Join(group.DOFade(1f, 0.3f))
+            .Join(rect.DOScale(1f, 0.4f).SetEase(Ease.OutBack))
+            .SetTarget(ui);
+    }
+
+    private void AnimateUIOut(GameObject ui, System.Action onComplete)
+    {
+        CanvasGroup group = GetOrAddCanvasGroup(ui);
+        RectTransform rect = ui.GetComponent<RectTransform>();
+
+        Vector2 originalPos = originalPositions.ContainsKey(ui) ? originalPositions[ui] : rect.anchoredPosition;
+
+        DOTween.Kill(ui);
+
+        DOTween.Sequence()
+            .Append(rect.DOAnchorPos(originalPos + Vector2.down * 100f, 0.3f).SetEase(Ease.InBack))
+            .Join(group.DOFade(0f, 0.3f))
+            .Join(rect.DOScale(0.8f, 0.3f).SetEase(Ease.InBack))
+            .SetTarget(ui)
+            .OnComplete(() => onComplete?.Invoke());
+    }
+
+    private CanvasGroup GetOrAddCanvasGroup(GameObject go)
+    {
+        CanvasGroup cg = go.GetComponent<CanvasGroup>();
+        if (cg == null)
+            cg = go.AddComponent<CanvasGroup>();
+        return cg;
+    }
+
+
+
+    void SpawnTriangles(Vector2 centerPosition = default)
     {
         if (trianglePrefab == null)
         {
@@ -37,31 +192,100 @@ public class MissionManager : MonoBehaviour
             return;
         }
 
-        float triangleBase = 1f;
+        // If no center position is provided, use Vector2.zero (0,0)
+        if (centerPosition == default)
+        {
+            centerPosition = Vector2.zero;
+        }
+
+        // Get the scale of the triangle prefab
+        float triangleScale = trianglePrefab.transform.localScale.x;
+
+        // Base length should account for the scale
+        float triangleBase = 1f * triangleScale;
         float angleStep = 360f / triangleCount;
+
+        // Calculate radius based on the actual size of triangles
         float radius = (triangleBase / 2) / Mathf.Sin(Mathf.PI / triangleCount);
 
+        // Reduce the radius to bring triangles closer to the center
+        radius *= radiusAdjustmentFactor;
+
+        // Clear the list before adding new triangles
+        triangleMissions.Clear();
+
+        // Store the original prefab scale to preserve it
+        Vector3 originalScale = trianglePrefab.transform.localScale;
+
+        // Spawn triangles clockwise instead of counter-clockwise
         for (int i = 0; i < triangleCount; i++)
         {
-            float angle = i * angleStep;
+            // Use negative angle for clockwise direction
+            float angle = -i * angleStep;
             float radians = angle * Mathf.Deg2Rad;
-
-            float xPos = Mathf.Cos(radians) * radius;
-            float yPos = Mathf.Sin(radians) * radius;
+            float xPos = centerPosition.x + Mathf.Cos(radians) * radius;
+            float yPos = centerPosition.y + Mathf.Sin(radians) * radius;
             Vector2 spawnPosition = new Vector2(xPos, yPos);
 
             GameObject triangle = Instantiate(trianglePrefab, trianglesParent);
-            triangle.transform.position = spawnPosition;
+            triangle.GetComponent<MissionSelection>().InitializeStartPosition(spawnPosition);
+
+            // Set initial position to the center point (not zero)
+            triangle.transform.position = centerPosition;
+
+            // Start with zero scale for animation, but remember the original scale
+            triangle.transform.localScale = Vector3.zero;
+
+            // Set final rotation
             float rotationAngle = angle + 90f;
             triangle.transform.rotation = Quaternion.Euler(0, 0, rotationAngle);
 
+            // Add component to list
+            triangleMissions.Add(triangle.GetComponent<MissionSelection>());
+
+            // Animate the triangle with DOTween
+            // First animate to position with slight delay based on index
+            float delay = i * 0.05f;
+            triangle.transform.DOMove(spawnPosition, 0.5f).SetDelay(delay).SetEase(Ease.OutBack);
+
+            // Animate scale with the same delay, but preserve original scale proportions
+            triangle.transform.DOScale(originalScale, 0.5f).SetDelay(delay).SetEase(Ease.OutBack);
+        }
+
+        for (int i = 0; i < triangleMissions.Count; i++)
+        {
+            triangleMissions[i].triangleParent = trianglesParent;
+            triangleMissions[i].missionManager = this;
             if (i < missions.Length && missions[i] != null)
             {
-                triangle.GetComponent<MissionSelection>().SetMission(missions[i]);
-                triangle.GetComponent<MissionSelection>().triangleParent = trianglesParent;
-                triangle.GetComponent<SpriteRenderer>().color = Color.green;
+                triangleMissions[i].SetMission(missions[i]);
+                if (i == 0)
+                {
+                    triangleMissions[i].GetComponent<SpriteRenderer>().color = Color.white;
+                    triangleMissions[i].missionLocked = false;
+                    triangleMissions[i].missionSelectionThatIsUnlockedOnComplete = triangleMissions[i + 1];
+                }
+                else if ( i < triangleMissions.Count - 1)
+                {
+                    triangleMissions[i].GetComponent<SpriteRenderer>().color = Color.red;
+                    triangleMissions[i].missionLocked = true;
+                    triangleMissions[i].missionSelectionThatIsUnlockedOnComplete = triangleMissions[i + 1];
+                }
+                else
+                {
+                    triangleMissions[i].GetComponent<SpriteRenderer>().color = Color.red;
+                    triangleMissions[i].missionLocked = true;
+                    
+                }
+            }
+            else
+            {
+                triangleMissions[i].GetComponent<SpriteRenderer>().color = Color.black;
+                Debug.Log("No more missions available");
             }
         }
+
+        ToggleSelectMissionUI(true);
     }
 
     public void InstanciatePlayers()
@@ -133,81 +357,153 @@ public class MissionManager : MonoBehaviour
     {
         if (players.Count == 0) return;
 
-        int randomIndex = Random.Range(0, players.Count);
-        GameObject selectedPlayer = players[randomIndex];
+        int selectedIndex = Random.Range(0, players.Count);
+        float initialDelay = 0.05f;
+        float delayIncrement = 0.05f;
+        float currentDelay = initialDelay;
 
-        for (int i = 0; i < players.Count; i++)
+        int previousIndex = -1;
+
+        // Set all titles to Crewmate first
+        foreach (var player in players)
         {
-            GameObject player = players[i];
-            Person person = player.GetComponent<Person>();
-
-            if (person == null || person.nameOfTitle == null) continue;
-
-            person.nameOfTitle.gameObject.SetActive(true); // 🔛 Make sure it's active
-
-            if (i == randomIndex)
+            Person p = player.GetComponent<Person>();
+            if (p != null && p.nameOfTitle != null)
             {
-                // 🧑‍✈️ This is the Captain
-                person.nameOfTitle.text = "Captain";
-
-                if (person.spriteRendererCircle != null)
-                {
-                    Material mat = new Material(person.spriteRendererCircle.material);
-                    person.spriteRendererCircle.material = mat;
-
-                    if (mat.HasProperty("_Outline"))
-                        mat.SetFloat("_Outline", 1f);
-
-                    if (mat.HasProperty("_OutlineThickness"))
-                        mat.SetFloat("_OutlineThickness", 0f);
-
-                    if (mat.HasProperty("_Distortion"))
-                        mat.SetFloat("_Distortion", 1f);
-
-                    if (mat.HasProperty("_DistortionStrength"))
-                        mat.SetFloat("_DistortionStrength", 0f);
-
-                    DOTween.To(() => mat.GetFloat("_OutlineThickness"), x => mat.SetFloat("_OutlineThickness", x), 0.05f, 1f);
-                    DOTween.To(() => mat.GetFloat("_DistortionStrength"), x => mat.SetFloat("_DistortionStrength", x), 0.03f, 1f);
-
-                    if (mat.HasProperty("_OutlineColor"))
-                    {
-                        Color targetColor = mat.GetColor("_OutlineColor");
-                        Color startColor = person.nameOfTitle.color;
-
-                        // Fade color
-                        DOTween.To(() => person.nameOfTitle.color,
-                                   x => person.nameOfTitle.color = x,
-                                   targetColor,
-                                   1f).SetEase(Ease.OutSine);
-                    }
-                }
-
-                // Fade in the title text
-                Color titleColor = person.nameOfTitle.color;
-                titleColor.a = 0f;
-                person.nameOfTitle.color = titleColor;
-                person.nameOfTitle.DOFade(1f, 1f);
-            }
-            else
-            {
-                // 👨‍🚀 Just a humble Crewmate
-                person.nameOfTitle.text = "Crewmate";
-
-                // Fade in the crewmate title too
-                Color titleColor = person.nameOfTitle.color;
-                titleColor.a = 0f;
-                person.nameOfTitle.color = titleColor;
-                person.nameOfTitle.DOFade(1f, 1f);
+                p.nameOfTitle.text = "Crewmate";
+                p.nameOfTitle.fontSize = 30f;
+                p.nameOfTitle.fontStyle = FontStyles.Normal;
+                p.nameOfTitle.color = Color.white;
+                p.nameOfTitle.alpha = 0f;
             }
         }
 
-        DOTween.Sequence()
-            .AppendInterval(3f)
-            .AppendCallback(() =>
+        Sequence rouletteSeq = DOTween.Sequence();
+
+        for (int i = 0; i <= selectedIndex + players.Count * 3; i++)  // Loop for effect
+        {
+            int currentIndex = i % players.Count;
+            bool isFinal = (i == selectedIndex + players.Count * 3);
+
+            rouletteSeq.AppendCallback(() =>
             {
-                DetransitionAndSpawnTriangles();
+                if (previousIndex >= 0 && previousIndex != currentIndex)
+                    UnhighlightPlayer(previousIndex); // Will show "Crewmate"
+
+                HighlightPlayer(currentIndex, isFinal, currentDelay); // Will show "Captain"
+                previousIndex = currentIndex;
             });
+
+            rouletteSeq.AppendInterval(currentDelay);
+            currentDelay += delayIncrement;
+        }
+
+        rouletteSeq.AppendInterval(1f);
+        rouletteSeq.AppendCallback(() =>
+        {
+            DetransitionAndSpawnTriangles();
+        });
+    }
+
+
+
+    private void HighlightPlayer(int index, bool isFinal, float duration)
+    {
+        GameObject player = players[index];
+        if (player == null) return;
+
+        Person person = player.GetComponent<Person>();
+        if (person == null) return;
+
+        SpriteRenderer circle = person.spriteRendererCircle;
+
+        // TITLE = Show Captain temporarily
+        if (person.nameOfTitle != null)
+        {
+            person.nameOfTitle.gameObject.SetActive(true);
+            person.nameOfTitle.text = "Captain";
+            person.nameOfTitle.fontSize = 40f;
+            person.nameOfTitle.fontStyle = FontStyles.Bold;
+            Color targetColor = circle.material.GetColor("_OutlineColor");
+            person.nameOfTitle.color = targetColor;
+            Color titleColor = person.nameOfTitle.color;
+            titleColor.a = 0f;
+            person.nameOfTitle.color = titleColor;
+            person.nameOfTitle.DOFade(1f, duration);
+        }
+
+        // OUTLINE + DISTORTION
+        if (circle != null)
+        {
+            Material mat = new Material(circle.material);
+            circle.material = mat;
+
+            if (mat.HasProperty("_Outline")) mat.SetFloat("_Outline", 1f);
+            if (mat.HasProperty("_OutlineThickness")) mat.SetFloat("_OutlineThickness", 0f);
+            if (mat.HasProperty("_Distortion")) mat.SetFloat("_Distortion", 1f);
+            if (mat.HasProperty("_DistortionStrength")) mat.SetFloat("_DistortionStrength", 0f);
+
+            DOTween.To(() => mat.GetFloat("_OutlineThickness"), x => mat.SetFloat("_OutlineThickness", x), 0.05f, 0.4f);
+            DOTween.To(() => mat.GetFloat("_DistortionStrength"), x => mat.SetFloat("_DistortionStrength", x), 0.03f, 0.4f);
+
+            if (mat.HasProperty("_PixelResolution"))
+                mat.SetFloat("_PixelResolution", 250f);
+        }
+
+        if (person.spriteRendererImage != null)
+        {
+            Material imgMat = new Material(person.spriteRendererImage.material);
+            person.spriteRendererImage.material = imgMat;
+
+            if (imgMat.HasProperty("_PixelResolution"))
+                imgMat.SetFloat("_PixelResolution", 250f);
+        }
+    }
+
+
+    private void UnhighlightPlayer(int index)
+    {
+        if (index < 0 || index >= players.Count) return;
+
+        GameObject player = players[index];
+        if (player == null) return;
+
+        Person person = player.GetComponent<Person>();
+        if (person == null) return;
+
+        if (person.nameOfTitle != null)
+        {
+            person.nameOfTitle.text = "Crewmate";
+            person.nameOfTitle.fontSize = 30f;
+            person.nameOfTitle.fontStyle = FontStyles.Normal;
+            person.nameOfTitle.color = Color.white;
+            person.nameOfTitle.alpha = 0f;
+            person.nameOfTitle.DOFade(1f, 0.2f);
+        }
+
+        SpriteRenderer circle = person.spriteRendererCircle;
+        if (circle != null)
+        {
+            Material mat = circle.material;
+
+            if (mat.HasProperty("_OutlineThickness"))
+                mat.SetFloat("_OutlineThickness", 0f);
+
+            if (mat.HasProperty("_DistortionStrength"))
+                mat.SetFloat("_DistortionStrength", 0f);
+
+            if (mat.HasProperty("_PixelResolution"))
+                mat.SetFloat("_PixelResolution", 0f);
+        }
+
+        SpriteRenderer image = person.spriteRendererImage;
+        if (image != null)
+        {
+            Material mat = image.material;
+
+            if (mat.HasProperty("_PixelResolution"))
+                mat.SetFloat("_PixelResolution", 0f);
+        }
     }
 
 
@@ -302,7 +598,7 @@ public class MissionManager : MonoBehaviour
                     if (completed >= players.Count)
                     {
                         players.Clear();
-                        SpawnTriangles();
+                        SpawnTriangles(centerOfTriangles.position);
                     }
                 }
             }
