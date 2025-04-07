@@ -1,5 +1,4 @@
-﻿using NUnit.Framework;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
@@ -13,6 +12,7 @@ public class MissionManager : MonoBehaviour
     private List<GameObject> players = new List<GameObject>();
     [SerializeField] private float spacingBetweenPlayers = 3f;
     [SerializeField] private string[] names;
+    private List<string> namesFromInput;
 
     public GameObject trianglePrefab;
     public int triangleCount = 8;
@@ -38,12 +38,99 @@ public class MissionManager : MonoBehaviour
     [Header("Mission locked")]
     [SerializeField] private GameObject missionLockedUI;
 
+
+    [SerializeField] private GameObject gradient;
+    [SerializeField] private TMP_InputField inputField;
+    [SerializeField] private GameObject gameSetupObject;
+    [SerializeField] private GameObject nameAddedToTripulation;
+
+    private Sequence popSeq;
+
     //[SerializeField] private game
     private GameObject currentOpenUI = null;
 
     void Start()
     {
-        InstanciatePlayers();
+        namesFromInput = new List<string>();
+
+        Screen.orientation = ScreenOrientation.LandscapeLeft;
+        //InstanciatePlayers();
+    }
+
+    public void AddName()
+    {
+        string name = inputField.text;
+        if (!string.IsNullOrEmpty(name))
+        {
+            namesFromInput.Add(name);
+            Debug.Log(name);
+            inputField.text = ""; // Clear the input field
+            PopUpAndDownUI(nameAddedToTripulation.GetComponent<RectTransform>(), nameAddedToTripulation.GetComponent<TextMeshProUGUI>(), $"{name} juntou-se à tripulação!");
+        }
+
+        if(namesFromInput.Count >= 4)
+        {
+            StartTheGame();
+        }
+    }
+
+
+    public void PopUpAndDownUI(
+        RectTransform targetUI,
+        TextMeshProUGUI targetText,
+        string message,
+        float popScale = 1f,
+        float popDuration = 0.5f,
+        System.Action onComplete = null)
+    {
+        if (targetUI == null) return;
+
+        if (targetText != null)
+            targetText.text = message;
+
+        targetUI.localScale = Vector3.zero;
+
+        popSeq.Kill();
+
+        targetUI.gameObject.SetActive(true);
+        popSeq = DOTween.Sequence();
+        popSeq.Append(targetUI.DOScale(Vector2.one, popDuration * 0.5f).SetEase(Ease.OutBack))
+            .AppendInterval(4f)
+              .Append(targetUI.DOScale(Vector2.zero, popDuration * 0.5f).SetEase(Ease.InOutBack))
+              .OnComplete(() =>
+              {
+                  targetUI.gameObject.SetActive(false);
+                  onComplete?.Invoke();
+              });
+    }
+
+    public void StartTheGame()
+    {
+        numberOfPlayers = namesFromInput.Count;
+        GradientTransformation();
+    }
+
+    private void GradientTransformation()
+    {
+        // Set initial state
+        gradient.transform.localScale = new Vector3(1f, 1f, 1f);
+        gradient.transform.rotation = Quaternion.Euler(0f, 0f, 90f);
+
+        gameSetupObject.transform.DOScale(new Vector3(0f, 0f, 0f), 1f).SetEase(Ease.InOutSine).OnComplete(() =>
+        {
+            gameSetupObject.SetActive(false);
+        });
+
+        // Scale up while rotating
+        gradient.transform.DOScale(new Vector3(2f, 2f, 2f), 1f).SetEase(Ease.InOutSine);
+        gradient.transform.DORotate(new Vector3(0f, 0f, 0f), 1f, RotateMode.Fast)
+            .SetEase(Ease.InOutSine)
+            .OnComplete(() =>
+            {
+                // Scale down after rotation finishes
+                gradient.transform.DOScale(new Vector3(1f, 0.5f, 1f), 1f).SetEase(Ease.InOutSine);
+                InstanciatePlayers();
+            });
     }
 
     public void ToggleSelectMissionUI(bool show)
@@ -292,7 +379,7 @@ public class MissionManager : MonoBehaviour
     {
         float totalWidth = (numberOfPlayers - 1) * spacingBetweenPlayers;
         float verticalOffset = 2f;
-        float duration = 2.5f;
+        float duration = 4f;
         int numberOfRepeats = 0;
         List<Tweener> moveTweens = new List<Tweener>();
 
@@ -304,13 +391,13 @@ public class MissionManager : MonoBehaviour
 
             GameObject playerTemp = Instantiate(playerPrefab, startPosition, Quaternion.identity);
 
-            if (i - (numberOfRepeats * names.Length) >= names.Length)
+            if (i - (numberOfRepeats * namesFromInput.Count) >= namesFromInput.Count)
                 numberOfRepeats++;
 
             players.Add(playerTemp);
 
             Person person = playerTemp.GetComponent<Person>();
-            person.nameOfPerson.text = names[i - (numberOfRepeats * names.Length)];
+            person.nameOfPerson.text = namesFromInput[i - (numberOfRepeats * namesFromInput.Count)];
 
             if (person.spriteRendererCircle != null)
             {
