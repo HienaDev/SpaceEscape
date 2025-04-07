@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Mission01
   m_EditorClassIdentifier: 
   missionPrefab: {fileID: 4700718001125782514, guid: 69a1ae8ea3db5124e9e478865703558f, type: 3}
-  missionTitle: Logic Gate I
+  missionTitle: "Miss\xE3o I \\nPort\xF5es L\xF3gicos"
   missionDescription: "Miss\xE3o no Setor de Rob\xF3tica, prepara as tuas ferramentas!"

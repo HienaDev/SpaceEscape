@@ -421,7 +421,7 @@ public class MissionManager : MonoBehaviour
         if (person.nameOfTitle != null)
         {
             person.nameOfTitle.gameObject.SetActive(true);
-            person.nameOfTitle.text = "Captain";
+            person.nameOfTitle.text = "CAPITÃ";
             person.nameOfTitle.fontSize = 40f;
             person.nameOfTitle.fontStyle = FontStyles.Bold;
             Color targetColor = circle.material.GetColor("_OutlineColor");
@@ -473,7 +473,7 @@ public class MissionManager : MonoBehaviour
 
         if (person.nameOfTitle != null)
         {
-            person.nameOfTitle.text = "Crewmate";
+            person.nameOfTitle.text = "";
             person.nameOfTitle.fontSize = 30f;
             person.nameOfTitle.fontStyle = FontStyles.Normal;
             person.nameOfTitle.color = Color.white;

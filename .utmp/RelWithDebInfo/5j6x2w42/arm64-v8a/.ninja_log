@@ -1,12 +1,23 @@
 # ninja log v5
+29	4183	7615087383047041	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	8a5b373ebcf823ea
 122	1250	7615087353460294	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	95e1d164c432eaa0
 1255	2220	7615087362662576	C:/Users/antro/OneDrive/Documents/GameJams/Stem Escape Room Update/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/5j6x2w42/obj/arm64-v8a/libswappywrapper.so	7c2068698ea4784a
 73	3264	7615087373857365	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	38b84b1efa2badb3
 41	3317	7615087374332781	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	3fe7243f7b980332
-2	3342	7615087374517915	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	4f72740face5555c
-101	3357	7615087374617942	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	d87ef2115f7d8288
 87	3518	7615087376335338	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	1cc520b884c3cf1a
+2	3342	7615087374517915	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	4f72740face5555c
 18	3636	7615087377485606	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	3c304e0973002d3e
-52	3902	7615087380160552	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	19dab4c4cceb3be8
-29	4183	7615087383047041	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	8a5b373ebcf823ea
 4184	4390	7615087385277452	C:/Users/antro/OneDrive/Documents/GameJams/Stem Escape Room Update/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/5j6x2w42/obj/arm64-v8a/libgame.so	9c8a8e30b50ffa45
+101	3357	7615087374617942	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	d87ef2115f7d8288
+52	3902	7615087380160552	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	19dab4c4cceb3be8
+116	1235	7657399940114695	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	95e1d164c432eaa0
+1238	2422	7657399951512008	C:/Users/antro/OneDrive/Documents/GameJams/Stem Escape Room Update/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/5j6x2w42/obj/arm64-v8a/libswappywrapper.so	7c2068698ea4784a
+75	3333	7657399960678795	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	38b84b1efa2badb3
+14	3334	7657399960588769	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	3fe7243f7b980332
+51	3410	7657399962014830	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	4f72740face5555c
+63	3422	7657399962340348	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	d87ef2115f7d8288
+100	3512	7657399963249856	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	1cc520b884c3cf1a
+28	3654	7657399964755381	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	3c304e0973002d3e
+87	4118	7657399969059972	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	19dab4c4cceb3be8
+40	4453	7657399972755529	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	8a5b373ebcf823ea
+4454	4742	7657399975695128	C:/Users/antro/OneDrive/Documents/GameJams/Stem Escape Room Update/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/5j6x2w42/obj/arm64-v8a/libgame.so	9c8a8e30b50ffa45
