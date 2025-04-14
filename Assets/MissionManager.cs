@@ -53,7 +53,7 @@ public class MissionManager : MonoBehaviour
     {
         namesFromInput = new List<string>();
 
-        Screen.orientation = ScreenOrientation.LandscapeLeft;
+        Screen.orientation = ScreenOrientation.Portrait;
         //InstanciatePlayers();
     }
 
@@ -106,6 +106,10 @@ public class MissionManager : MonoBehaviour
 
     public void StartTheGame()
     {
+        if (namesFromInput.Count <= 0)
+            return;
+
+        Screen.orientation = ScreenOrientation.LandscapeLeft;
         numberOfPlayers = namesFromInput.Count;
         GradientTransformation();
     }

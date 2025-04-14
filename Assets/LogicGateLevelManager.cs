@@ -20,17 +20,17 @@ public class LogicGateLevelManager : MonoBehaviour , IPuzzle
 
     public void CheckIfPuzzleSolved()
     {
-        bool wrong = false;
+        bool wrong = true;
         foreach (LogicPuzzleSocket levelSocket in levelSockets)
         {
 
-            if (!levelSocket.IsCorrect())
+            if (levelSocket.IsCorrect())
             {
-                levelSocket.GetComponent<SpriteRenderer>().color = Color.red;
-                wrong = true;
+                levelSocket.GetComponent<SpriteRenderer>().color = Color.green;
+                wrong = false;
             }
             else
-                levelSocket.GetComponent<SpriteRenderer>().color = Color.green;
+                levelSocket.GetComponent<SpriteRenderer>().color = Color.red;
         }
         
         if(!wrong)
@@ -44,6 +44,11 @@ public class LogicGateLevelManager : MonoBehaviour , IPuzzle
             return;
         }
 
+    }
+
+    public void PopDown()
+    {
+        missionSelection.PopdownWithoutCompletion();
     }
 
     public void CompleteLevel()

@@ -70,7 +70,7 @@ public class MissionSelection : MonoBehaviour
                 case TouchPhase.Moved:
 
                     hit = Physics2D.Raycast(touchPosition, Vector2.zero);
-                    if (hit.collider != null && hit.collider.gameObject == gameObject && !isUp) 
+                    if (hit.collider != null && hit.collider.gameObject == gameObject && !isUp)
                     {
                         GoUp();
                         Debug.Log("Not Clicked");
@@ -97,13 +97,13 @@ public class MissionSelection : MonoBehaviour
                         //        Instantiate(missionSO.missionPrefab);
                         //        triangleParent.gameObject.SetActive(false);
                         //    }
-                                
-                        if(missionLocked)
+
+                        if (missionLocked)
                         {
-                            if(!missionComplete)
+                            if (!missionComplete)
                                 missionManager.ShowLockedMissionUI();
                             else
-                                Debug.Log("Mission Complete");  
+                                Debug.Log("Mission Complete");
                         }
                         else if (!missionLocked)
                         {
@@ -112,7 +112,7 @@ public class MissionSelection : MonoBehaviour
                             else
                                 missionManager.ShowUnlockedMissionUI("Test title", "Test Description Test Description Test Description Test Description Test Description ", SelectMission);
                         }
-                            Debug.Log("Clicked");
+                        Debug.Log("Clicked");
                     }
 
                     break;
@@ -123,34 +123,38 @@ public class MissionSelection : MonoBehaviour
 
     void SelectMission()
     {
-        if(missionSO != null)
+        if (missionSO != null)
             if (missionSO.missionPrefab != null)
-            {  
+            {
                 GameObject missionClone = Instantiate(missionSO.missionPrefab);
                 gamePrefab = missionClone;
                 Popup(gamePrefab);
-                missionClone.GetComponent<IPuzzle>().StartPuzzle(this); 
+                missionClone.GetComponent<IPuzzle>().StartPuzzle(this);
                 missionManager.CloseAllUIs();
                 triangleParent.gameObject.SetActive(false);
             }
         Debug.Log("Mission Select");
     }
 
+
+
     public void CompleteMission()
     {
         missionLocked = true;
+
         missionComplete = true;
-        Popdown(gamePrefab, onCompleteCallback: DeactivatePrefab);
-        
-        
+        missionSelectionThatIsUnlockedOnComplete.missionLocked = false;
+        missionSelectionThatIsUnlockedOnComplete.GetComponent<SpriteRenderer>().color = Color.white;
+        //Popdown(gamePrefab, duration: 1.0f, onCompleteCallback: DeactivatePrefab);
+
+
     }
 
     private void DeactivatePrefab()
     {
         gamePrefab.SetActive(false);
         triangleParent.gameObject.SetActive(true);
-        missionSelectionThatIsUnlockedOnComplete.missionLocked = false;
-        missionSelectionThatIsUnlockedOnComplete.GetComponent<SpriteRenderer>().color = Color.white;
+
         missionManager.ToggleSelectMissionUI(true);
     }
 
@@ -163,6 +167,11 @@ public class MissionSelection : MonoBehaviour
         target.transform.DOScale(targetScale, duration)
             .SetEase(Ease.OutBack)
             .OnComplete(() => onCompleteCallback?.Invoke());
+    }
+
+    public void PopdownWithoutCompletion()
+    {
+        Popdown(gamePrefab, onCompleteCallback: DeactivatePrefab);
     }
 
     // Method to trigger the popdown effect (scaling down)
