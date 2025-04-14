@@ -1,0 +1,1606 @@
+fileFormatVersion: 2
+guid: 201ee074c47701947ab1a596f409e03f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1000651313159775565
+    second: Vetores_0
+  - first:
+      213: -2898222039626035156
+    second: Vetores_1
+  - first:
+      213: -3828249171806406659
+    second: Vetores_2
+  - first:
+      213: -1134520849960102389
+    second: Vetores_3
+  - first:
+      213: -3771504079089051710
+    second: Vetores_4
+  - first:
+      213: 7576971183721430553
+    second: Vetores_5
+  - first:
+      213: 6245153002679917857
+    second: Vetores_6
+  - first:
+      213: 2192508086705330620
+    second: Vetores_7
+  - first:
+      213: 1707446689659608769
+    second: Vetores_8
+  - first:
+      213: 8589914157261955642
+    second: Vetores_9
+  - first:
+      213: -2169420163580361738
+    second: Vetores_10
+  - first:
+      213: 5533006707440527418
+    second: Vetores_11
+  - first:
+      213: -3106502174197035450
+    second: Vetores_12
+  - first:
+      213: 6373767282539105309
+    second: Vetores_13
+  - first:
+      213: 437167003245648072
+    second: Vetores_14
+  - first:
+      213: -2805275839017244427
+    second: Vetores_15
+  - first:
+      213: -6475773826637692505
+    second: Vetores_16
+  - first:
+      213: 9093145038983507880
+    second: Vetores_17
+  - first:
+      213: -6131200811183186366
+    second: Vetores_18
+  - first:
+      213: -2486375442971041252
+    second: Vetores_19
+  - first:
+      213: 3234690011840192884
+    second: Vetores_20
+  - first:
+      213: -2669342575004799818
+    second: Vetores_21
+  - first:
+      213: 9047454921521198752
+    second: Vetores_22
+  - first:
+      213: 8332244605295077336
+    second: Vetores_23
+  - first:
+      213: -8391397508305987218
+    second: Vetores_24
+  - first:
+      213: 8814650549495852409
+    second: Vetores_25
+  - first:
+      213: 4763346387535862915
+    second: Vetores_26
+  - first:
+      213: -4918477865232478495
+    second: Vetores_27
+  - first:
+      213: 6815653972333421347
+    second: Vetores_28
+  - first:
+      213: -2720521651910918551
+    second: Vetores_29
+  - first:
+      213: 1581945534361042704
+    second: Vetores_30
+  - first:
+      213: -2072219419441512881
+    second: Vetores_31
+  - first:
+      213: -5318947778882841611
+    second: Vetores_32
+  - first:
+      213: -5968562786805405442
+    second: Vetores_33
+  - first:
+      213: 3633676625639337053
+    second: Vetores_34
+  - first:
+      213: -2155057291883715814
+    second: Vetores_35
+  - first:
+      213: 687892102587442774
+    second: Vetores_36
+  - first:
+      213: 2586522477261529694
+    second: Vetores_37
+  - first:
+      213: 3391448575293653514
+    second: Vetores_38
+  - first:
+      213: -4777709508002171508
+    second: Vetores_39
+  - first:
+      213: 5744395053360778785
+    second: Vetores_40
+  - first:
+      213: 8518785331852276703
+    second: Vetores_41
+  - first:
+      213: 8670014449407012354
+    second: Vetores_42
+  - first:
+      213: 2654721107088353183
+    second: Vetores_43
+  - first:
+      213: -1843299176519326157
+    second: Vetores_44
+  - first:
+      213: 6542221221384972300
+    second: Vetores_45
+  - first:
+      213: -1118643925076192045
+    second: Vetores_46
+  - first:
+      213: -4036449629710289163
+    second: Vetores_47
+  - first:
+      213: 5507506456912495362
+    second: Vetores_48
+  - first:
+      213: 8394961937624786766
+    second: Vetores_49
+  - first:
+      213: -2345444865901194557
+    second: Vetores_50
+  - first:
+      213: -3943567736427255105
+    second: Vetores_51
+  - first:
+      213: 1997609676109487762
+    second: Vetores_52
+  - first:
+      213: 2982340941289540315
+    second: Vetores_53
+  - first:
+      213: 8859263751972255477
+    second: Vetores_54
+  - first:
+      213: 8535822265527555256
+    second: Vetores_55
+  - first:
+      213: 3498592331713040732
+    second: Vetores_56
+  - first:
+      213: -138804923470372132
+    second: Vetores_57
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Vetores_0
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 3628
+        width: 886
+        height: 616
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d45aae0511703ed00800000000000000
+      internalID: 1000651313159775565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_1
+      rect:
+        serializedVersion: 2
+        x: 1817
+        y: 3716
+        width: 409
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c20d1ef096277c7d0800000000000000
+      internalID: -2898222039626035156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_2
+      rect:
+        serializedVersion: 2
+        x: 2489
+        y: 3415
+        width: 828
+        height: 545
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df7bbc249a35fdac0800000000000000
+      internalID: -3828249171806406659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_3
+      rect:
+        serializedVersion: 2
+        x: 4604
+        y: 3445
+        width: 487
+        height: 532
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b069ad34c4f5140f0800000000000000
+      internalID: -1134520849960102389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_4
+      rect:
+        serializedVersion: 2
+        x: 4721
+        y: 3946
+        width: 459
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c7d5f8b50de8abc0800000000000000
+      internalID: -3771504079089051710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_5
+      rect:
+        serializedVersion: 2
+        x: 5357
+        y: 3803
+        width: 329
+        height: 361
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91e3617a52fc62960800000000000000
+      internalID: 7576971183721430553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_6
+      rect:
+        serializedVersion: 2
+        x: 5723
+        y: 3872
+        width: 341
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12d53b4519d3ba650800000000000000
+      internalID: 6245153002679917857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_7
+      rect:
+        serializedVersion: 2
+        x: 10123
+        y: 3666
+        width: 681
+        height: 571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb91e3b0d7a5d6e10800000000000000
+      internalID: 2192508086705330620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_8
+      rect:
+        serializedVersion: 2
+        x: 3453
+        y: 3666
+        width: 365
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ced312c7b112b710800000000000000
+      internalID: 1707446689659608769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_9
+      rect:
+        serializedVersion: 2
+        x: 4962
+        y: 3228
+        width: 420
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a32a2ba2a61853770800000000000000
+      internalID: 8589914157261955642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_10
+      rect:
+        serializedVersion: 2
+        x: 5468
+        y: 3203
+        width: 420
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f30935fadba4e1e0800000000000000
+      internalID: -2169420163580361738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_11
+      rect:
+        serializedVersion: 2
+        x: 6195
+        y: 3378
+        width: 217
+        height: 558
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a38a8d8094039cc40800000000000000
+      internalID: 5533006707440527418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_12
+      rect:
+        serializedVersion: 2
+        x: 6995
+        y: 3491
+        width: 554
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64ec1054bbc73e4d0800000000000000
+      internalID: -3106502174197035450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_13
+      rect:
+        serializedVersion: 2
+        x: 1311
+        y: 3140
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1c00c4e29b247850800000000000000
+      internalID: 6373767282539105309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_14
+      rect:
+        serializedVersion: 2
+        x: 1614
+        y: 3150
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c89affb211211600800000000000000
+      internalID: 437167003245648072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_15
+      rect:
+        serializedVersion: 2
+        x: 1672
+        y: 3104
+        width: 55
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f82466cc78a119d0800000000000000
+      internalID: -2805275839017244427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_16
+      rect:
+        serializedVersion: 2
+        x: 7986
+        y: 185
+        width: 1570
+        height: 3387
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a10d79c30e6126a0800000000000000
+      internalID: -6475773826637692505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_17
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 2821
+        width: 241
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8afa7b34c37513e70800000000000000
+      internalID: 9093145038983507880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_18
+      rect:
+        serializedVersion: 2
+        x: 1270
+        y: 3088
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24ed6d2c85999eaa0800000000000000
+      internalID: -6131200811183186366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_19
+      rect:
+        serializedVersion: 2
+        x: 1316
+        y: 2759
+        width: 364
+        height: 363
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c12e47f35be9e7dd0800000000000000
+      internalID: -2486375442971041252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_20
+      rect:
+        serializedVersion: 2
+        x: 1955
+        y: 2821
+        width: 240
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4712d3a7d6de3ec20800000000000000
+      internalID: 3234690011840192884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_21
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 2870
+        width: 219
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bc2301221794fad0800000000000000
+      internalID: -2669342575004799818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_22
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 2988
+        width: 50
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a671aec0540f8d70800000000000000
+      internalID: 9047454921521198752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_23
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 2997
+        width: 128
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d72748825412a370800000000000000
+      internalID: 8332244605295077336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_24
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 2989
+        width: 51
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e69d25cfc64cb8b80800000000000000
+      internalID: -8391397508305987218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_25
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 2822
+        width: 81
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97de6e509fde35a70800000000000000
+      internalID: 8814650549495852409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_26
+      rect:
+        serializedVersion: 2
+        x: 2200
+        y: 2822
+        width: 80
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38c173b5d4eca1240800000000000000
+      internalID: 4763346387535862915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_27
+      rect:
+        serializedVersion: 2
+        x: 2508
+        y: 2785
+        width: 153
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ee4237d07e0ebbb0800000000000000
+      internalID: -4918477865232478495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_28
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 2898
+        width: 24
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 323e9ec4d21169e50800000000000000
+      internalID: 6815653972333421347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_29
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 2897
+        width: 23
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96e3716b8f3ce3ad0800000000000000
+      internalID: -2720521651910918551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_30
+      rect:
+        serializedVersion: 2
+        x: 2781
+        y: 2815
+        width: 320
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01ffa9df41334f510800000000000000
+      internalID: 1581945534361042704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_31
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 2843
+        width: 219
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4eb587ca6ffd33e0800000000000000
+      internalID: -2072219419441512881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_32
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 2821
+        width: 115
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f3d5d41d2d4f26b0800000000000000
+      internalID: -5318947778882841611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_33
+      rect:
+        serializedVersion: 2
+        x: 2097
+        y: 2821
+        width: 115
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef829d8a4c76b2da0800000000000000
+      internalID: -5968562786805405442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_34
+      rect:
+        serializedVersion: 2
+        x: 3761
+        y: 2724
+        width: 524
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5c6fd393a96d6230800000000000000
+      internalID: 3633676625639337053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_35
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 2808
+        width: 177
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a13e7ae9fc2b712e0800000000000000
+      internalID: -2155057291883715814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_36
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 2796
+        width: 38
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65665820932eb8900800000000000000
+      internalID: 687892102587442774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_37
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 2796
+        width: 37
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e52acb43d7c25e320800000000000000
+      internalID: 2586522477261529694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_38
+      rect:
+        serializedVersion: 2
+        x: 2037
+        y: 2796
+        width: 37
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a020264b288d01f20800000000000000
+      internalID: 3391448575293653514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_39
+      rect:
+        serializedVersion: 2
+        x: 2235
+        y: 2796
+        width: 37
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c85368f048a22bdb0800000000000000
+      internalID: -4777709508002171508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_40
+      rect:
+        serializedVersion: 2
+        x: 884
+        y: 2763
+        width: 11
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12e841dadd038bf40800000000000000
+      internalID: 5744395053360778785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_41
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 2745
+        width: 11
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd3fcd6ff1ec83670800000000000000
+      internalID: 8518785331852276703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_42
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 2754
+        width: 11
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20ea86eb434125870800000000000000
+      internalID: 8670014449407012354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_43
+      rect:
+        serializedVersion: 2
+        x: 2123
+        y: 2763
+        width: 11
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f97abb518c677d420800000000000000
+      internalID: 2654721107088353183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_44
+      rect:
+        serializedVersion: 2
+        x: 2149
+        y: 2745
+        width: 11
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 336abc84a294b66e0800000000000000
+      internalID: -1843299176519326157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_45
+      rect:
+        serializedVersion: 2
+        x: 2174
+        y: 2754
+        width: 12
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c086ca6e983aaca50800000000000000
+      internalID: 6542221221384972300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_46
+      rect:
+        serializedVersion: 2
+        x: 1275
+        y: 2722
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d45fa7e647c970f0800000000000000
+      internalID: -1118643925076192045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_47
+      rect:
+        serializedVersion: 2
+        x: 1353
+        y: 2706
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f67c53a276abf7c0800000000000000
+      internalID: -4036449629710289163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_48
+      rect:
+        serializedVersion: 2
+        x: 1625
+        y: 2706
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 203807a41f79e6c40800000000000000
+      internalID: 5507506456912495362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_49
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 954
+        width: 3387
+        height: 1566
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e47ec036765e08470800000000000000
+      internalID: 8394961937624786766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_50
+      rect:
+        serializedVersion: 2
+        x: 3729
+        y: 2186
+        width: 351
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c212b7325e437fd0800000000000000
+      internalID: -2345444865901194557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_51
+      rect:
+        serializedVersion: 2
+        x: 4163
+        y: 2198
+        width: 344
+        height: 286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbaef82a902a549c0800000000000000
+      internalID: -3943567736427255105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_52
+      rect:
+        serializedVersion: 2
+        x: 4594
+        y: 2185
+        width: 167
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29e9368aa6fe8bb10800000000000000
+      internalID: 1997609676109487762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_53
+      rect:
+        serializedVersion: 2
+        x: 4848
+        y: 2163
+        width: 682
+        height: 369
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdacaa4f847636920800000000000000
+      internalID: 2982340941289540315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_54
+      rect:
+        serializedVersion: 2
+        x: 3855
+        y: 983
+        width: 108
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f6fccba17d62fa70800000000000000
+      internalID: 8859263751972255477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_55
+      rect:
+        serializedVersion: 2
+        x: 3962
+        y: 921
+        width: 619
+        height: 1109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b4d3a23025557670800000000000000
+      internalID: 8535822265527555256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_56
+      rect:
+        serializedVersion: 2
+        x: 4838
+        y: 521
+        width: 2093
+        height: 1223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5159a9703f7d8030800000000000000
+      internalID: 3498592331713040732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vetores_57
+      rect:
+        serializedVersion: 2
+        x: 2163
+        y: 28
+        width: 788
+        height: 794
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd2297358add21ef0800000000000000
+      internalID: -138804923470372132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
