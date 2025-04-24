@@ -7,6 +7,12 @@ public class LogicPuzzleSocket : MonoBehaviour
 
     private GameObject currentAnswerObject;
 
+    private void Start()
+    {
+        currentAnswer = TypeLogic.None;
+        currentAnswerObject = null;
+    }
+
     public bool IsCorrect() => correctAnswer.typeLogic == currentAnswer;
 
     public void AttemptAnswer(TypeLogic answerAttempt, GameObject answerAttemptObject)

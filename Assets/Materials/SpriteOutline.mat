@@ -41,19 +41,19 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Distortion: 1
+    - _Distortion: 0
     - _DistortionScale: 10
-    - _DistortionStrength: 0.01
+    - _DistortionStrength: 0.03
     - _Outline: 0
     - _OutlineSize: 0.03
-    - _OutlineThickness: 0
-    - _PixelResolution: 10
+    - _OutlineThickness: 0.05
+    - _PixelResolution: 150
     - _Pixelation: 0
-    - _Use8Directions: 0
+    - _Use8Directions: 1
     m_Colors:
     - _Direction: {r: 0, g: 0, b: 0, a: 0}
     - _DistortionScrollDir: {r: 0.2, g: 0, b: 0, a: 0}
-    - _OutlineColor: {r: 1, g: 0.101745084, b: 0, a: 1}
+    - _OutlineColor: {r: 0, g: 0.6718631, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &6562465845524870331

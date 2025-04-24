@@ -14,7 +14,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1739922062914570551, guid: 633d5eaff64e69346a8312bd3370ec3e, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.71
+      value: 1.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2262238651696918282, guid: 633d5eaff64e69346a8312bd3370ec3e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2621525084076734796, guid: 633d5eaff64e69346a8312bd3370ec3e, type: 3}
       propertyPath: m_Name
@@ -24,6 +28,34 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 5211473295243520223, guid: 9b6aa1dfa50c3dd498c2d5d5a3fcf52b, type: 3}
+    - target: {fileID: 7570984198841134963, guid: 633d5eaff64e69346a8312bd3370ec3e, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570984198841134963, guid: 633d5eaff64e69346a8312bd3370ec3e, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570984198841134963, guid: 633d5eaff64e69346a8312bd3370ec3e, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570984198841134963, guid: 633d5eaff64e69346a8312bd3370ec3e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7939073391487692259, guid: 633d5eaff64e69346a8312bd3370ec3e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7939073391487692259, guid: 633d5eaff64e69346a8312bd3370ec3e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7939073391487692259, guid: 633d5eaff64e69346a8312bd3370ec3e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7939073391487692259, guid: 633d5eaff64e69346a8312bd3370ec3e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.53
@@ -63,6 +95,10 @@ PrefabInstance:
     - target: {fileID: 7939073391487692259, guid: 633d5eaff64e69346a8312bd3370ec3e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7939073391487692259, guid: 633d5eaff64e69346a8312bd3370ec3e, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3537511899450542512, guid: 633d5eaff64e69346a8312bd3370ec3e, type: 3}

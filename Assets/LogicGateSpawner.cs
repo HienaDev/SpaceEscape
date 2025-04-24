@@ -28,7 +28,7 @@ public class LogicGateSpawner : MonoBehaviour
                     RaycastHit2D hit = Physics2D.Raycast(touchPosition, Vector2.zero);
                     if (hit.collider != null && hit.collider.gameObject == gameObject)
                     {
-                        GameObject prefab = Instantiate(answerPrefab);
+                        GameObject prefab = Instantiate(answerPrefab, gameObject.transform);
                         prefab.transform.position = touchPosition;
                         prefab.GetComponent<LogicPuzzleAnswer>().isDragging = true;
                     }

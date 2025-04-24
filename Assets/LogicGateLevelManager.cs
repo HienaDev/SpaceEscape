@@ -1,9 +1,10 @@
 using UnityEngine;
 
-public class LogicGateLevelManager : MonoBehaviour
+public class LogicGateLevelManager : MonoBehaviour , IPuzzle
 {
 
     [SerializeField] private LogicPuzzleSocket[] levelSockets;
+    public MissionSelection missionSelection;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,17 +20,17 @@ public class LogicGateLevelManager : MonoBehaviour
 
     public void CheckIfPuzzleSolved()
     {
-        bool wrong = false;
+        bool wrong = true;
         foreach (LogicPuzzleSocket levelSocket in levelSockets)
         {
 
-            if (!levelSocket.IsCorrect())
+            if (levelSocket.IsCorrect())
             {
-                levelSocket.GetComponent<SpriteRenderer>().color = Color.red;
-                wrong = true;
+                levelSocket.GetComponent<SpriteRenderer>().color = Color.green;
+                wrong = false;
             }
             else
-                levelSocket.GetComponent<SpriteRenderer>().color = Color.green;
+                levelSocket.GetComponent<SpriteRenderer>().color = Color.red;
         }
         
         if(!wrong)
@@ -45,8 +46,23 @@ public class LogicGateLevelManager : MonoBehaviour
 
     }
 
+    public void PopDown()
+    {
+        missionSelection.PopdownWithoutCompletion();
+    }
+
     public void CompleteLevel()
     {
+        CompletePuzzle();
+    }
 
+    public void StartPuzzle(MissionSelection m)
+    {
+        missionSelection = m;
+    }
+
+    public void CompletePuzzle()
+    {
+        missionSelection.CompleteMission();
     }
 }
