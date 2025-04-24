@@ -49,7 +49,7 @@ Material:
     - _OverallScale: 1
     - _Randomness: 4.84
     - _Rotation: 0
-    - _RotationSpeed: 0
+    - _RotationSpeed: 0.000001
     - _StarScale: 2
     m_Colors:
     - _Offset: {r: 0.01, g: 0.01, b: 0, a: 0}
