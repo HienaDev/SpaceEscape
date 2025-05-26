@@ -15,3 +15,7 @@ MonoBehaviour:
   options: []
   isInputBased: 1
   correctAnswer: Egipto
+  hintField: Palavra final (Egipto)
+  missionDescription: "Verifica o mapa para ver onde estamos atualmente em \xF3rbita
+    e estabelece uma conex\xE3o de r\xE1dio com a localiza\xE7\xE3o correta da DSN
+    (Deep Space Network)."

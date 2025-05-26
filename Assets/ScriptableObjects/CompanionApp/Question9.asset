@@ -15,3 +15,7 @@ MonoBehaviour:
   options: []
   isInputBased: 1
   correctAnswer: ABCDEF
+  hintField: ABCDEF
+  missionDescription: "Domina o processo de eletr\xF3lise e podemos voltar \xE0 Terra!\_
+    Coloca os itens corretos nos lugares correspondentes, n\xE3o \xE9 necess\xE1rio
+    utilizar todos os itens dispon\xEDveis."

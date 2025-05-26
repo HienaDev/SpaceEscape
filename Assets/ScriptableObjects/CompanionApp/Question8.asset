@@ -15,3 +15,6 @@ MonoBehaviour:
   options: []
   isInputBased: 1
   correctAnswer: ABCDEF
+  hintField: ABCDEF
+  missionDescription: "J\xE1 recolheste os componentes na miss\xE3o anterior, agora
+    s\xF3 precisas de coloc\xE1-los na ordem correta."

@@ -19,5 +19,7 @@ MonoBehaviour:
     image: {fileID: 2321968715804500658, guid: 9b6aa1dfa50c3dd498c2d5d5a3fcf52b, type: 3}
   - text: OR
     image: {fileID: -6350310754897797769, guid: 9b6aa1dfa50c3dd498c2d5d5a3fcf52b, type: 3}
-  isInputBased: 0
-  correctAnswer: AND
+  isInputBased: 1
+  correctAnswer: A
+  hintField: A
+  missionDescription: "Escolhe o port\xE3o l\xF3gico que melhor se adequa \xE0 situa\xE7\xE3o."

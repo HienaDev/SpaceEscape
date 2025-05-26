@@ -15,3 +15,6 @@ MonoBehaviour:
   options: []
   isInputBased: 1
   correctAnswer: Onda
+  hintField: PLACEHOLDER (Onda)
+  missionDescription: "Estamos recebendo sinal da Terra, mas tem uma interfer\xEAncia
+    muito forte. Verifica a forma de onda do ru\xEDdo, ser\xE1 necess\xE1rio cancel\xE1-la."

@@ -15,3 +15,6 @@ MonoBehaviour:
   options: []
   isInputBased: 1
   correctAnswer: ABCABCABCA
+  hintField: ABCABCABCA
+  missionDescription: "Precisamos de combust\xEDvel, para isso o Laborat\xF3rio Qu\xEDmico
+    e alguns drones do Setor de Rob\xF3tica precisam de energia."

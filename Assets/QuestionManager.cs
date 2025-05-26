@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using DG.Tweening; // Import DOTween namespace
+using UnityEngine.UI;
 
 public class QuestionManager : MonoBehaviour
 {
@@ -16,25 +17,40 @@ public class QuestionManager : MonoBehaviour
     private QuestionSO currentQuestion;
 
     [Header("UI Elements")]
+    public Image playerPhoto;
+    public Image playerHair;
+    public TMP_Text playerNameText;
     public TMP_InputField inputField;
     public TMP_Text questionText;
+    public TMP_Text descriptionText;
     public TMP_Text timerText;
     public TMP_Text timeDeducedText;  // New TMP for time deducted
+    public TMP_Text hintText;
     public AudioSource correctSound;
     public AudioSource wrongSound;
     public RectTransform inputFieldRect;
     public RectTransform timerRect;
+    public GameObject winGame;
+    public TMP_Text winText;
+    public GameObject loseGame;
+    public TMP_Text loseText;
+    public TMP_Text winFinalTime;
+
 
     private float timeRemaining = 3600f;
-    private bool isTimerRunning = true;
+    private bool isTimerRunning = false;
 
     private float totalTimeDeduced = 0f;
     private Vector3 deduceTextOriginalPosition;
 
     private bool isTransitioning = false; // Flag to track if an answer is in transition
 
+    [SerializeField] private MainMenuTransition mainMenuTransition; // Reference to the MainMenuTransition script
+
     void Start()
     {
+        
+
         // Store the original position of the time deducted text at the start
         deduceTextOriginalPosition = timeDeducedText.transform.localPosition;
 
@@ -54,6 +70,18 @@ public class QuestionManager : MonoBehaviour
         timeDeducedText.gameObject.SetActive(false);
     }
 
+    public void StartGame(Sprite hair, Sprite clothing, string name)
+    {
+        playerPhoto.sprite = clothing; // Set player photo to clothing sprite
+        playerHair.sprite = hair; // Set player hair to hair sprite
+        playerNameText.text = name; // Set player name text
+        isTimerRunning = true; // Start the timer when the game starts
+        timeRemaining = 3600f; // Reset timer to 1 hour (3600 seconds)
+        currentIndex = 0; // Reset question index
+        LoadQuestion(currentIndex); // Load the first question
+        UpdateTimer(); // Update the timer display immediately
+    }
+
     private void UpdateTimer()
     {
         if (isTimerRunning)
@@ -69,6 +97,7 @@ public class QuestionManager : MonoBehaviour
             {
                 timeRemaining = 0f;
                 isTimerRunning = false;
+                mainMenuTransition.TransitionToLose(); // Transition to lose screen
                 Debug.Log("Time's up! Quiz over.");
             }
         }
@@ -82,6 +111,14 @@ public class QuestionManager : MonoBehaviour
 
         inputKeyboardUI.SetActive(currentQuestion.isInputBased);
         multipleChoiceUI.SetActive(!currentQuestion.isInputBased);
+        if(currentQuestion.hintField.Length > 0)
+        {
+            hintText.text = "Instrução: " + currentQuestion.hintField;
+        }
+        else
+        {
+            hintText.text = "";
+        }
 
         // Pop out the current UI
         if (currentQuestion.isInputBased)
@@ -95,6 +132,8 @@ public class QuestionManager : MonoBehaviour
                 }
                 // Set input field color back to white after pop-in
                 inputField.image.color = Color.white;
+
+                descriptionText.text = currentQuestion.missionDescription;
 
                 // Clear the input field text after animation
                 inputField.text = "";
@@ -216,6 +255,8 @@ public class QuestionManager : MonoBehaviour
         }
         else
         {
+            winFinalTime.text = "Tempo Restante:\n" + timerText.text; // Set the final time in the win screen
+            mainMenuTransition.TransitionToWin();
             Debug.Log("Quiz complete!");
         }
     }

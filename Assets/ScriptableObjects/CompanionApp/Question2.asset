@@ -15,3 +15,7 @@ MonoBehaviour:
   options: []
   isInputBased: 1
   correctAnswer: 300
+  hintField: "\xC2ngulo em graus (300)"
+  missionDescription: "Alinha o X dos bra\xE7os mec\xE2nicos com o X vis\xEDvel na
+    nave. Come\xE7a com o bra\xE7o esquerdo a 20 graus e o bra\xE7o direito a 300
+    graus."

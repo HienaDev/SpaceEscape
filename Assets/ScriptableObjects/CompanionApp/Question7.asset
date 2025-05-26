@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   options: []
   isInputBased: 1
-  correctAnswer: D_A_ABC_ABCD_ABC_ABCD
+  correctAnswer: A_A_ABC_ABCD_ABC_ABCD
+  hintField: A_A_ABC_ABCD_ABC_ABCD
+  missionDescription: "Existem itens importantes na sala de armazenamento, mas com
+    o impacto, este setor tornou-se inacess\xEDvel \xE0 tripula\xE7\xE3o. Ser\xE1
+    necess\xE1rio usar drones."
