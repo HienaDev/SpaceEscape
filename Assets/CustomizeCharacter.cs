@@ -41,8 +41,12 @@ public class CustomizeCharacter : MonoBehaviour
         UpdateClothing();
     }
 
+    private bool isStartingGame = false;
+
     public void StartGame()
     {
+        if (isStartingGame) return; // Prevent starting if cooldown is active
+
         if (nameInput.text.Length <= 1)
         {
             // Pop animation using DOTween
@@ -62,6 +66,8 @@ public class CustomizeCharacter : MonoBehaviour
             return; // Prevent game from starting
         }
 
+        isStartingGame = true; // Activate cooldown
+
         gateTransition.TransitionToMission();
 
         Debug.Log(nameInput.text + "count: " + nameInput.text.Length);
@@ -73,6 +79,8 @@ public class CustomizeCharacter : MonoBehaviour
             nameInput.text
         );
 
+        // Reset cooldown after 3 seconds
+        DOVirtual.DelayedCall(3f, () => isStartingGame = false);
     }
 
     public void NextHair()

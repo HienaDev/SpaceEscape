@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class MainMenuTransition : MonoBehaviour
@@ -14,6 +15,8 @@ public class MainMenuTransition : MonoBehaviour
 
     private GameObject currentObject;
 
+    private bool isStartingGame = false;
+
     void Start()
     {
         // Set the initial screen
@@ -23,32 +26,62 @@ public class MainMenuTransition : MonoBehaviour
 
     public void TransitionToCustomization()
     {
+        if(isStartingGame) return; // Prevent starting if cooldown is active
+        isStartingGame = true; // Activate cooldown
         transition.TriggerTransition(currentObject, customizationView);
         currentObject = customizationView;
+
+
+        // Reset cooldown after 3 seconds
+        DOVirtual.DelayedCall(3f, () => isStartingGame = false);
     }
 
     public void TransitionToMission()
     {
+        if (isStartingGame) return; // Prevent starting if cooldown is active
+        isStartingGame = true; // Activate cooldown
         transition.TriggerTransition(currentObject, missionView);
         currentObject = missionView;
+
+
+        // Reset cooldown after 3 seconds
+        DOVirtual.DelayedCall(3f, () => isStartingGame = false);
     }
 
     public void TransitionToWin()
     {
+        if(isStartingGame) return; // Prevent starting if cooldown is active
+        isStartingGame = true; // Activate cooldown
         transition.TriggerTransition(currentObject, winView);
         currentObject = winView;
+
+
+        // Reset cooldown after 3 seconds
+        DOVirtual.DelayedCall(3f, () => isStartingGame = false);
     }
 
     public void TransitionToLose()
     {
+        if(isStartingGame) return; // Prevent starting if cooldown is active
+        isStartingGame = true; // Activate cooldown
         transition.TriggerTransition(currentObject, loseView);
         currentObject = loseView;
+
+
+        // Reset cooldown after 3 seconds
+        DOVirtual.DelayedCall(3f, () => isStartingGame = false);
     }
 
     public void TransitionToMainMenu()
     {
+        if(isStartingGame) return; // Prevent starting if cooldown is active
+        isStartingGame = true; // Activate cooldown
         transition.TriggerTransition(currentObject, mainMenuView);
         currentObject = mainMenuView;
+
+
+        // Reset cooldown after 3 seconds
+        DOVirtual.DelayedCall(3f, () => isStartingGame = false);
     }
 
     private void ShowOnly(GameObject target)
